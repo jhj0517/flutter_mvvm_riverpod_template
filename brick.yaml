@@ -1,5 +1,5 @@
-name: flutter_template_starter
-description: Flutter Template Starter
+name: flutter_mvvm_provider
+description: Flutter Provider MVVM Template
 
 version: 0.1.0
 
@@ -7,23 +7,27 @@ environment:
   mason: ">=0.1.0-dev.52 <0.1.0"
 
 vars:
+
   project_name:
     type: string
     description: Project name
     default: example_project_name
     prompt: What is the project name?
+
   org_name:
     type: string
     description: Organization name
     default: com.example
     prompt: What is the organization name?
+
   application_id:
     type: string
     description: application id on Android and iOS.
     default: myapp
     prompt: What is the application id? ( the name after the organization name. )
+
   description:
     type: string
     description: Project description
-    default: Flutter Template Starter
+    default: Flutter MVVM Provider Template
     prompt: What is the project description?
