@@ -1,5 +1,7 @@
 # Flutter MVVM (Provider) Template
 Simple template for MVVM with in Flutter with [Provider pattern](https://docs.flutter.dev/data-and-backend/state-mgmt/simple).
+
+This template is integrated with [Mason](https://github.com/felangel/mason).
 # Architecture
 ![Flowcharts - Page 1](https://github.com/jhj0517/flutter-mvvm-template-provider/assets/97279763/0bc5831c-8474-4309-8416-3289db20d0e0)
 
