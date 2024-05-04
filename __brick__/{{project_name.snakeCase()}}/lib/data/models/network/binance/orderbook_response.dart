@@ -3,6 +3,9 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'orderbook_response.g.dart';
 
+// After specifying [part 'your_response.g.dart'], Run:
+// dart pub run build_runner build
+
 /// Example network response data class for the Binance order book. You can change it to your own.
 /// API Documentation : https://binance-docs.github.io/apidocs/spot/en/#order-book
 
