@@ -1,5 +1,5 @@
+import '../data_source/localdb/daos/memo_dao.dart';
 import '../models/local/memo.dart';
-import '../localdb/daos/memo_dao.dart';
 
 class MemoRepository{
 

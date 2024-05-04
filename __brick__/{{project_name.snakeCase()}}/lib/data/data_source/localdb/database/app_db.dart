@@ -1,7 +1,7 @@
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 
-import '../../constants/app_constants.dart';
+import '../../../../constants/app_constants.dart';
 
 class AppDB {
   static const _databaseName = AppConstants.databaseName;

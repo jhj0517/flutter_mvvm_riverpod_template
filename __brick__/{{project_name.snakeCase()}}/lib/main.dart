@@ -4,9 +4,9 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'generated/l10n.dart';
-import 'views/views.dart';
-import 'providers/providers.dart';
-import 'repositories/repositories.dart';
+import 'presentation/views/views.dart';
+import 'presentation/providers/providers.dart';
+import 'data/repositories/repositories.dart';
 import 'di/dependency_injection.dart';
 
 Future<void> main() async {

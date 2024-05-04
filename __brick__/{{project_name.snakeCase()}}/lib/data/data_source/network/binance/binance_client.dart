@@ -1,7 +1,7 @@
 import 'package:retrofit/retrofit.dart';
 import 'package:dio/dio.dart';
 
-import '../../models/network/binance/orderbook_response.dart';
+import '../../../models/network/binance/orderbook_response.dart';
 part 'binance_client.g.dart';
 // After specifying [part 'your_api.g.dart'], Run:
 // dart pub run build_runner build
