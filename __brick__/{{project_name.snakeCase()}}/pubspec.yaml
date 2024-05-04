@@ -1,4 +1,4 @@
-name: ff
+name: {{project_name.snakeCase()}}
 description: {{{description}}}
 publish_to: 'none'
 
