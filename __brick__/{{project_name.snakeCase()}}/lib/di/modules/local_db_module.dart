@@ -3,8 +3,8 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 import '../dependency_injection.dart';
 import 'base_module.dart';
-import '../../localdb/daos/memo_dao.dart';
-import '../../localdb/database/app_db.dart';
+import '../../data/data_source/localdb/daos/memo_dao.dart';
+import '../../data/data_source/localdb/database/app_db.dart';
 
 final class LocalDBModule extends BaseModule {
 

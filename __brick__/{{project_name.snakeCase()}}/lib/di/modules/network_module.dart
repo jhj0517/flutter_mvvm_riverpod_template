@@ -3,7 +3,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 import '../dependency_injection.dart';
 import 'base_module.dart';
-import '../../network/network.dart';
+import '../../data/data_source/network/network.dart';
 import '../../constants/app_constants.dart';
 
 final class NetworkModule extends BaseModule {

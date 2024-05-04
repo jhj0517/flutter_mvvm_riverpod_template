@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../../models/models.dart';
+import '../../../../data/models/models.dart';
 import '../../../providers/home_provider.dart';
 
 class MemoTile extends StatelessWidget {

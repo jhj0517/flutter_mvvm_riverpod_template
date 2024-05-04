@@ -1,5 +1,5 @@
 import '../database/app_db.dart';
-import '../../models/local/memo.dart';
+import '../../../models/local/memo.dart';
 
 class MemoDao {
 

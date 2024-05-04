@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../models/models.dart';
-import '../repositories/memo_repository.dart';
-import '../repositories/binance_repository.dart';
+import '../../data/models/models.dart';
+import '../../data/repositories/memo_repository.dart';
+import '../../data/repositories/binance_repository.dart';
 
 class HomeProvider extends ChangeNotifier {
 

@@ -1,4 +1,4 @@
-import '../../localdb/localdb.dart';
+import '../../data_source/localdb/localdb.dart';
 
 class Memo{
   final int? id;
