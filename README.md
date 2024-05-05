@@ -48,20 +48,23 @@ flutter:
 
 # Folder structure
 ```folder
-lib
-├── constants/                 (static constants values)
-├── di/                        (dependency injectors)
-├── generated/                 (generated l10n classes)
-├── l10n/                      (l10n tables by locale)
-├── models/                    (data classes)
-├── localdb/                   (sqflite components)
-├── repositories/              (repositories)
-├── network/                   (retrofit components)
-├── providers/                 (providers)
-└── views/                     (pages including various widgets)
-assets
-└── images/                    (your image files)
-.env                           (put important variables here)
+lib/
+├── constants/                                 (static constant values)
+├── di/                                        (dependency injectors)
+├── generated/                                 (generated l10n classes)
+├── l10n/                                      (localization tables)
+├── data
+│   ├── data_source
+│   │   ├── localdb/                           (SQLite components)
+│   │   └── network/                           (Retrofit components)
+│   ├── models/                                (data classes)
+│   └── repositories/                          (repositories)
+└── presentation
+    ├── providers/                             (providers)
+    └── views/                                 (pages including widget classes)
+assets/
+└── images/                                    (image asset files)
+.env                                           (important variables such as API Key)
 ```
 
 # How to Make & Use Template
@@ -71,9 +74,9 @@ assets
    ```
 2. Git clone this repository
    ```
-   git clone https://github.com/jhj0517/flutter_template_mvvm_provider.git
+   git clone https://github.com/jhj0517/flutter_mvvm_provider_template.git
    ```
-3. Add the brick as the global (you can change the brick name in [`brick.yaml`](https://github.com/jhj0517/flutter_template_mvvm_provider/blob/master/brick.yaml) as you want. )
+3. Add the brick as the global (you can change the brick name in [`brick.yaml`](https://github.com/jhj0517/flutter_mvvm_provider_template/blob/master/brick.yaml) as you want. )
    ```
    mason add -g flutter_mvvm_provider --path ./
    ```
