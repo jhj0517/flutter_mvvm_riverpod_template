@@ -1,8 +1,8 @@
-# Flutter MVVM (Provider) Template
-Simple template for MVVM with in Flutter with [Provider pattern](https://docs.flutter.dev/data-and-backend/state-mgmt/simple). 
+# Flutter MVVM (Riverpod) Template
+Simple template for MVVM with in Flutter with [Riverpod pattern](https://riverpod.dev/docs/introduction/getting_started). 
 This template is integrated with [Mason](https://github.com/felangel/mason).
 # Architecture
-![Flowcharts - Page 1](https://github.com/jhj0517/flutter-mvvm-template-provider/assets/97279763/0bc5831c-8474-4309-8416-3289db20d0e0)
+![Flowcharts - Page 1](https://github.com/jhj0517/flutter_mvvm_riverpod_template/assets/97279763/f2507a29-e93e-4813-8dd7-9fb719b13290)
 
 # Overview
 - Notices
@@ -15,8 +15,9 @@ dependencies:
   cupertino_icons: ^1.0.6
   path: ^1.9.0
 
-  # Provider Pattern
-  provider: ^6.0.5
+  # Riverpod Pattern
+  flutter_riverpod: ^2.0.2
+  riverpod_annotation: ^2.1.5
 
   # Local DB
   sqflite: ^2.3.3
@@ -47,6 +48,7 @@ flutter:
 ```
 
 # Folder structure
+[**Layer-first structure**](https://codewithandrea.com/articles/flutter-project-structure/)
 ```folder
 lib/
 ├── constants/                                 (static constant values)
@@ -74,18 +76,18 @@ assets/
    ```
 2. Git clone this repository
    ```
-   git clone https://github.com/jhj0517/flutter_mvvm_provider_template.git
+   git clone https://github.com/jhj0517/flutter_mvvm_riverpod_template.git
    ```
-3. Add the brick as the global (you can change the brick name in [`brick.yaml`](https://github.com/jhj0517/flutter_mvvm_provider_template/blob/master/brick.yaml) as you want. )
+3. Add the brick as the global (you can change the brick name in [`brick.yaml`](https://github.com/jhj0517/flutter_mvvm_riverpod_template/blob/master/brick.yaml) as you want. )
    ```
-   mason add -g flutter_mvvm_provider --path ./
+   mason add -g flutter_mvvm_riverpod --path ./
    ```
 4. Check that the brick is added correctly.
     ```
     mason ls -g
-    ├── flutter_mvvm_provider 0.1.0  // it prints something like this
+    ├── flutter_mvvm_riverpod 0.1.0  // it prints something like this
     ```
 5. You can now start a new project with your own template
    ```
-   mason make flutter_mvvm_provider
+   mason make flutter_mvvm_riverpod
    ```
