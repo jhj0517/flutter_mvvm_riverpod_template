@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../data/models/models.dart';
-import '../../../providers/home_provider.dart';
+import '../../../providers/home/memos.dart';
 
-class MemoTile extends StatelessWidget {
-  final Memo memo;
+class MemoTile extends ConsumerWidget {
+  final Memo? memo;
 
   const MemoTile({
     super.key,
@@ -13,14 +13,18 @@ class MemoTile extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    if (memo==null){
+      return const SizedBox.shrink();
+    }
+
     return ListTile(
-      title: Text('Name: ${memo.content}'),
+      title: Text('Name: ${memo!.content}'),
       trailing: IconButton(
         icon: const Icon(Icons.delete),
-        onPressed: () {
-          final homeProvider = Provider.of<HomeProvider>(context, listen: false);
-          homeProvider.deleteMemo(memo);
+        onPressed: () async {
+          final memoNotifier = ref.read(memosProvider.notifier);
+          memoNotifier.deleteMemo(memo!);
         }
       ),
     );

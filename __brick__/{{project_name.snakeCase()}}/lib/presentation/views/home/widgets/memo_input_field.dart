@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../providers/home_provider.dart';
 import '../../../../data/models/models.dart';
+import '../../../providers/providers.dart';
 
-class MemoInputField extends StatefulWidget {
+class MemoInputField extends ConsumerStatefulWidget {
   const MemoInputField({super.key});
 
   @override
   MemoInputFieldState createState() => MemoInputFieldState();
 }
 
-class MemoInputFieldState extends State<MemoInputField> {
+class MemoInputFieldState extends ConsumerState<MemoInputField> {
   final _memoController = TextEditingController();
 
   @override
@@ -30,10 +30,10 @@ class MemoInputFieldState extends State<MemoInputField> {
             icon: const Icon(Icons.add),
             onPressed: () {
               if (_memoController.text.isNotEmpty) {
-                final homeProvider = Provider.of<HomeProvider>(context, listen: false);
-                homeProvider.addMemo(Memo(
+                final memoNotifier = ref.read(memosProvider.notifier);
+                memoNotifier.addMemo(Memo(
                     content: _memoController.text,
-                    isImportant: false  // Assuming 'isImportant' is a field you want to include
+                    isImportant: false
                 ));
                 _memoController.clear();
               }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
 
 import '../../providers/providers.dart';
@@ -7,22 +7,17 @@ import '../widgets/common/common.dart';
 import 'widgets/memo_tile.dart';
 import 'widgets/memo_input_field.dart';
 
-class MyHomePage extends StatefulWidget {
+class MyHomePage extends ConsumerStatefulWidget  {
   const MyHomePage({super.key});
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  ConsumerState<MyHomePage> createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-
-  late ThemeProvider themeProvider;
-  late HomeProvider homeProvider;
+class _MyHomePageState extends ConsumerState<MyHomePage> {
 
   @override
   void initState() {
-    themeProvider = context.read<ThemeProvider>();
-    homeProvider = context.read<HomeProvider>();
     init();
     super.initState();
   }
@@ -33,11 +28,13 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Future<void> init() async{
-    homeProvider.readMemos();
   }
 
   @override
   Widget build(BuildContext context) {
+    final memos = ref.watch(memosProvider);
+    final orderBooks = ref.watch(orderBooksProvider);
+
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
       appBar: NormalAppBar(title: Intl.message("appTitle")),
@@ -47,25 +44,23 @@ class _MyHomePageState extends State<MyHomePage> {
           const SizedBox(height: 20),
           OutlinedButton(
               onPressed: () async {
-                await homeProvider.fetchOrderBook(symbol: "BTCUSDT");
-                debugPrint("TEST: ${homeProvider.response!.toJson()}");
+                await ref.read(orderBooksProvider.notifier).fetchOrderBook(symbol: "BTCUSDT");
+                debugPrint("TEST: ${orderBooks.value?.toJson()}");
               },
               child: const Text("DEBUG RETROFIT")
           ),
           const SizedBox(height: 20),
           const MemoInputField(),
-          Consumer<HomeProvider>(builder: (context, homeProvider, child) {
-            return Expanded(
-              child: ListView.builder(
-                shrinkWrap: true,
-                itemCount: homeProvider.memos.length,
-                itemBuilder: (context, index) {
-                  final memo = homeProvider.memos[index];
-                  return MemoTile(memo: memo);
-                },
-              ),
-            );
-          }),
+          Expanded(
+            child: ListView.builder(
+              shrinkWrap: true,
+              itemCount: memos.value?.length ?? 0,
+              itemBuilder: (context, index) {
+                final memo = memos.value?[index];
+                return MemoTile(memo: memo);
+              },
+            ),
+          )
         ],
       )
     );
