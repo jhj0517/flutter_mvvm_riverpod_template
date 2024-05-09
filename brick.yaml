@@ -1,5 +1,5 @@
-name: flutter_mvvm_provider
-description: Flutter Provider MVVM Template
+name: flutter_mvvm_riverpod
+description: Flutter RiverPod MVVM Template
 
 version: 0.1.0
 
@@ -29,5 +29,5 @@ vars:
   description:
     type: string
     description: Project description
-    default: Flutter MVVM Provider Template
+    default: Flutter MVVM Riverpod Template
     prompt: What is the project description?
